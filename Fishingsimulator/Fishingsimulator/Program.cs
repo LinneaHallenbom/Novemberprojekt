@@ -13,7 +13,7 @@ namespace Fishingsimulator
             StartGame();
 
         }
-       
+
 
         static void StartGame()
         {
@@ -24,7 +24,7 @@ namespace Fishingsimulator
 
             while (GameIsRunning == true)
             {
-               
+
                 while (answeriscorrect == false)
                 {
                     Console.WriteLine("Do you want to fish in river or ocean?");
@@ -35,11 +35,16 @@ namespace Fishingsimulator
                     {
                         answeriscorrect = true;
                         Console.WriteLine("at the river");
+                        Fish fishriver = new Fish();
+                        answercheck = "";
+                        
                     }
                     else if (answercheck == "OCEAN")
                     {
                         answeriscorrect = true;
                         Console.WriteLine("at the ocean");
+                        Fish fishocean = new Fish();
+                        answercheck = "";
                     }
                     else
                     {
@@ -47,7 +52,7 @@ namespace Fishingsimulator
 
                     }
 
-                    
+
                 }
 
 
@@ -59,6 +64,8 @@ namespace Fishingsimulator
 
 
         }
+
+       
 
     }
 }
