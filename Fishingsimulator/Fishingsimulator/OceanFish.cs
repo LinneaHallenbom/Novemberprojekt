@@ -6,9 +6,23 @@ using System.Threading.Tasks;
 
 namespace Fishingsimulator
 {
-    class OceanFish:Fish
+    class OceanFish : Fish
     {
-        String[] CommonOceanFish = {"Dab", "Flounder", "Cod", "Red cod", "Sea bass", "Coalfish"};
-        String[] RareOceanFish = {"Seahorse", "Whiteshark", "Knifejawshark", "Jellyfish" };
+        public void Randomizecommon()
+        {
+          
+            var random = new Random();
+            var CommonOceanFish = new List<string> { "Dab", "Flounder", "Cod", "Red cod", "Sea bass", "Coalfish" };
+            int index = random.Next(CommonOceanFish.Count);
+            Console.WriteLine(CommonOceanFish[index]);
+            Console.ReadLine();
+
+        }
+        public void Randomizerare()
+        {
+            String[] RareOceanFish = { "Seahorse", "Whiteshark", "Knifejawshark", "Jellyfish" }
+        }
+
+       
     }
 }

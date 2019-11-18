@@ -11,6 +11,7 @@ namespace Fishingsimulator
         static void Main(string[] args)
         {
             StartGame();
+            Console.WriteLine("Welcome to fishing simulator");
 
         }
 
@@ -19,32 +20,36 @@ namespace Fishingsimulator
         {
             bool GameIsRunning = true;
 
-            Console.WriteLine("Welcome to fishing simulator");
+            
             bool answeriscorrect = false;
 
             while (GameIsRunning == true)
             {
 
                 while (answeriscorrect == false)
-                {
+                {                    
                     Console.WriteLine("Do you want to fish in river or ocean?");
                     string answer = Console.ReadLine();
                     string answercheck = answer.ToUpper();
 
                     if (answercheck == "RIVER")
                     {
-                        answeriscorrect = true;
                         Console.WriteLine("at the river");
                         Fish fishriver = new Fish();
+                        fishriver.Willyoucatchfish(answercheck);
                         answercheck = "";
                         
                     }
                     else if (answercheck == "OCEAN")
                     {
-                        answeriscorrect = true;
                         Console.WriteLine("at the ocean");
                         Fish fishocean = new Fish();
                         answercheck = "";
+                    }
+                    else if (answercheck == "GO BACK")
+                    {
+                        answeriscorrect = true;
+                        Console.WriteLine("Going back");
                     }
                     else
                     {

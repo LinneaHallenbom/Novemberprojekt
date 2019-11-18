@@ -14,18 +14,24 @@ namespace Fishingsimulator
         int FishesCaught = 0;
         int level = 0;
 
-        public bool Willyoucatchfish(int level)
+        public bool Willyoucatchfish(string answercheck)
         {
             bool FishorTrash = false;
             int Randomfishornot = generator.Next(101);
             
-            if (Randomfishornot + level >= 50)
+            if (Randomfishornot + level >= 40)
             {
-                Rareity();
+               
+                Console.WriteLine("You will catch a fish");
+                Console.ReadLine();
+                Rareity(answercheck);
             }
             else
             {
+                Console.WriteLine("You didn't catch anything");
+                Console.ReadLine();
 
+                return false;
             }
 
             //level
@@ -38,23 +44,38 @@ namespace Fishingsimulator
             {
                 level = level + 1;
                 FishesCaught = 0;
+                Console.WriteLine("You went up a level, now you are level: " + level);
+                Console.ReadLine();
             }
 
 
-            return FishorTrash;
+            return true;
         }
 
-        public void Rareity()
+        public void Rareity(string answercheck)
         {
             int Rarity = generator.Next(101);
-            if (Rarity + level >= 99)
+            if (Rarity + level >= 70)
             {
-                
+                Console.WriteLine("You caught a rare fish");
+                Console.ReadLine();
+
+                if(answercheck == "RIVER")
+                {
+                    RiverFish whatrareriverfish = new RiverFish();
+                    whatrareriverfish.RandomizeRare();
+
+                }
+                else if(answercheck == "OCEAN")
+                {
+                    RiverFish whatcommonriverfish = new RiverFish();
+                    whatcommonriverfish.RandomizeCommon();
+                }
             }
             else
             {
-               
-
+                Console.WriteLine("You caught a common fish");
+                Console.ReadLine();
             }
             
         }
