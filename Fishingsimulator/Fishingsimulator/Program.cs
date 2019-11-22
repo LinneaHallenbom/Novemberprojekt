@@ -8,26 +8,28 @@ namespace Fishingsimulator
 {
     class Program
     {
+        static int level { get; set; }
+        static int FishesCaught = 0;
+
         static void Main(string[] args)
         {
-            StartGame();
-            Console.WriteLine("Welcome to fishing simulator");
-
+            StartGame(level, FishesCaught);
         }
 
 
-        static void StartGame()
+        static void StartGame(int level, int FishesCaught)
         {
+            level = 0;
             bool GameIsRunning = true;
-
-            
+          
             bool answeriscorrect = false;
-
+            
             while (GameIsRunning == true)
             {
-
+                
                 while (answeriscorrect == false)
-                {                    
+                {
+                    Console.Clear();
                     Console.WriteLine("Do you want to fish in river or ocean?");
                     string answer = Console.ReadLine();
                     string answercheck = answer.ToUpper();
@@ -36,7 +38,10 @@ namespace Fishingsimulator
                     {
                         Console.WriteLine("at the river");
                         Fish fishriver = new Fish();
-                        fishriver.Willyoucatchfish(answercheck);
+                        bool a = fishriver.Willyoucatchfish(answercheck, level, FishesCaught);
+
+
+
                         answercheck = "";
                         
                     }
@@ -44,25 +49,17 @@ namespace Fishingsimulator
                     {
                         Console.WriteLine("at the ocean");
                         Fish fishocean = new Fish();
+                        fishocean.Willyoucatchfish(answercheck, level, FishesCaught);
                         answercheck = "";
                     }
-                    else if (answercheck == "GO BACK")
-                    {
-                        answeriscorrect = true;
-                        Console.WriteLine("Going back");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You have to choose where to fish");
-
-                    }
+                   
+                   
 
 
                 }
 
 
-                Console.WriteLine("out of loop");
-                Console.ReadLine();
+                
 
             }
 
@@ -70,6 +67,27 @@ namespace Fishingsimulator
 
         }
 
+        public static void Level(int FishesCaught)
+        {
+            
+            
+            bool FishorTrash = false;
+
+            if (FishorTrash == true)
+            {
+                FishesCaught = FishesCaught + 1;
+            }
+
+            if (FishesCaught >= 5)
+            {
+                level += 1;
+                FishesCaught = 0;
+                Console.WriteLine("You went up a level, now you are level: " + level + " your chances of catching fish and rare fish increased by 1%");
+                Console.ReadLine();
+            }
+        }
+
+    
        
 
     }

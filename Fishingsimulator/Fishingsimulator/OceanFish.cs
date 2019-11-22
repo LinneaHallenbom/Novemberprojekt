@@ -8,19 +8,27 @@ namespace Fishingsimulator
 {
     class OceanFish : Fish
     {
-        public void Randomizecommon()
+        
+        public void Randomizecommonocean(int FishesCaught)
         {
-          
             var random = new Random();
+
             var CommonOceanFish = new List<string> { "Dab", "Flounder", "Cod", "Red cod", "Sea bass", "Coalfish" };
             int index = random.Next(CommonOceanFish.Count);
             Console.WriteLine(CommonOceanFish[index]);
             Console.ReadLine();
+            Program.Level(FishesCaught);
 
         }
-        public void Randomizerare()
+        public void Randomizerareocean(int FishesCaught)
         {
-            String[] RareOceanFish = { "Seahorse", "Whiteshark", "Knifejawshark", "Jellyfish" }
+            var random = new Random();
+            var RareOceanFish = new List<string> { "Seahorse", "Whiteshark", "Knifejawshark", "Jellyfish" };
+            int index = random.Next(RareOceanFish.Count);
+            Console.WriteLine(RareOceanFish[index]);
+            Console.ReadLine();
+            Program.Level(FishesCaught);
+
         }
 
        

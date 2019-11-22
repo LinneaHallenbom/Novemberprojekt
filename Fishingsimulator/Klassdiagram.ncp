@@ -1,0 +1,65 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Fish</Name>
+        <Access>Public</Access>
+        <Location left="725" top="544" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int FishesCaught</Member>
+        <Member type="Field">int Level</Member>
+        <Member type="Field">bool FishorTrash</Member>
+        <Member type="Field">int Randomfishornot</Member>
+        <Member type="Field">int Rarity</Member>
+        <Member type="Method">public bool Willyoucatchfish()</Member>
+        <Member type="Method">public void Rareity()</Member>
+        <Member type="Method">public int RandomGenerator()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RiverFish</Name>
+        <Access>Public</Access>
+        <Location left="623" top="818" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List CommoneRiverFish</Member>
+        <Member type="Field">List RareRiverFish</Member>
+        <Member type="Field">int Index</Member>
+        <Member type="Method">public void Randomizecommonriver()</Member>
+        <Member type="Method">public void Randomizerareriver()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OceanFish</Name>
+        <Access>Public</Access>
+        <Location left="832" top="818" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List CommonOceanFish</Member>
+        <Member type="Field">int index</Member>
+        <Member type="Field">List RareOceanFish</Member>
+        <Member type="Method">public void Randomizecommonocean()</Member>
+        <Member type="Method">public void Randomizerareocean()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Dependency" first="1" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="2" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
